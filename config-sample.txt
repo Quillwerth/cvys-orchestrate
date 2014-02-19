@@ -1,0 +1,19 @@
+# CVYS Orchestrate Config File
+#  
+#  First things, first: if this isn't called "config.txt" exactly, we're going to have issues.
+#  Make sure it's not called "config-sample.txt", for instance.
+#  
+# <<< See that? Orchestrate will ignore anything that starts with a pound. 
+#       So, if that's what you want, do that.
+#
+#
+# API Key: This allows Orchestrate to get the results of our form.
+#  Where you can find it: Log into FormSite, select the Registration form, click Form (top bar) >> Integration >> API
+#   Copy the API Key below, after the equals sign.
+
+# The below should look like: apiKey=[The key you got from FormSite]
+apiKey=sampleKey
+
+# Form URL: This can be found just below the API Key, if you follow the above instructions.
+
+formURL=https://sampleURL.com/
