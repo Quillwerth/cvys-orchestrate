@@ -2,6 +2,11 @@ package debug;
 
 public class Logger {
 
+	boolean debug = false;
+	
+	public Logger(boolean setDebug){
+		this.debug = setDebug;
+	}
 	
 	public static void outError(String s){
 		outError(s, null);
@@ -16,6 +21,12 @@ public class Logger {
 	
 	public static void warn(String s){
 		System.out.println("[warn]  "+s);
+	}
+	
+	public void outDebug(String s){
+		if(debug){
+			System.out.println("[debug] "+s);
+		}
 	}
 	
 }
