@@ -1,5 +1,10 @@
 package debug;
 
+/**
+ * Logger.java: Outputs messages for both debugging and UI purposes.
+ * @author Patrick
+ *
+ */
 public class Logger {
 
 	boolean debug = false;

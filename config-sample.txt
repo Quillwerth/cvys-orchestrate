@@ -17,3 +17,7 @@ apiKey=sampleKey
 # Form URL: This can be found just below the API Key, if you follow the above instructions.
 
 formURL=https://sampleURL.com/
+
+# Audition Length: This is the number of minutes the audition is expected to take.
+
+auditionLength=5

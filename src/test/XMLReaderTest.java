@@ -21,8 +21,8 @@ import org.junit.Test;
 
 public class XMLReaderTest {
 
-	static String XML1 = "<outer> <mid>\"Hi.\"</mid> </outer> ";
-	static String XML2 = "<outer> <mid> <low1> \"First.\" </low1> <low2> \"Second.\" </low2> <low3> \"Third.\" </low3> </mid> </outer> ";
+	static String XML1 = "<outer> <mid id='2'>\"Hi.\"</mid> </outer> ";
+	static String XML2 = "<outer> <mid> <low> \"First.\" </low> <low> \"Second.\" </low> <low> \"Third.\" </low> </mid> </outer> ";
 	
 	@BeforeClass
 	public static void init(){
@@ -43,7 +43,16 @@ public class XMLReaderTest {
 		for(Iterator<Element> i = e.elementIterator("mid"); i.hasNext();){
 			Element inner = i.next();
 			assertEquals("we wanted \"Hi.\" We found "+inner.getText(), inner.getText(), "\"Hi.\"");
+			assertEquals(inner.attributeValue("id"), "2");
 		}
+	}
+	
+	@Test
+	public void testReadXML2() throws DocumentException {
+		SAXReader read = new SAXReader();
+		Document doc = read.read(new File("file2.xml"));
+		Element e = doc.getRootElement();
+		System.out.println(e.element("mid").elements("low"));
 	}
 	
 	@AfterClass
